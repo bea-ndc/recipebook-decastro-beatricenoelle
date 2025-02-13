@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Title{% endblock %}</title>
-        {% block styles %}
-        {% endblock %}
+        
+        <h1>
+            {% block head %} Recipe Book {% endblock %}
+        </h1>
+        
     </head>
     <body>
        {% block content %}
