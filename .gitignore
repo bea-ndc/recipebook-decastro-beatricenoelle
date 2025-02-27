@@ -1,2 +1,7 @@
 recipebook/.env
 recipebook/recipebook/.env
+recipebook/__pycache__
+recipebook/db.sqlite3
+recipebook/ledger/__pycache__
+__pycache__/__init__.cpython-313.pyc
+*.sqlite3
