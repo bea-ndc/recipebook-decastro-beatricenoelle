@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Title{% endblock %}</title>
-        {% block styles %}
-        {% endblock %}
-    </head>
-    <body>
-       {{ recipe.name }}
+{% extends 'base.html' %}
 
-    </body>
-</html>
+{% block head %}<h2>{{ object.name }}</h2>
+<p>By: {{ recipe.author }}</p>
+<hr>{% endblock %}
+
+{% block content %} 
+    
+
+    <ul>
+    {% for ingredient in object.ingredients.all %}
+        <li>{{ ingredient.ingredient.name }} :{{ ingredient.quantity }} </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
