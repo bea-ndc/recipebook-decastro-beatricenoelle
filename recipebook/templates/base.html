@@ -7,16 +7,12 @@
    
         {% block head %}{% endblock %}
         
-       
-        
     </head>
     <body>
         
         {% block content %}
         {% endblock %}
-       {% if user.is_authenticated %}
-      
-   
+        {% if user.is_authenticated %}
             <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             {{ form.as_p }}
