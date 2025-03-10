@@ -2,34 +2,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-from .models import RecipeIngredient, Recipe, Ingredient
+from .models import Recipe
 
 
-class RecipeListView(ListView):
+class RecipeListView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipe_list.html'
+    redirect_field_name = 'login.html'
 
 
 class RecipeDetailView(DetailView):
-    model = Recipe 
+    model = Recipe
     template_name = 'recipe_detail.html'
-
-
-def recipe_list(request):
-    recipes = Recipe.objects.all()
-    ctx = {'recipe' : recipes}
-    return render(request,'ledger/recipe_list.html', ctx)
-    
-    
-def recipe_detail(request, id):
-    ctx = {"recipe", Recipe.objects.get(id=id)}
-    return render(request, 'recipe_detail.html', ctx)
-
-
-
-
+    redirect_field_name = 'login'
 
 
 # Create your views here.
