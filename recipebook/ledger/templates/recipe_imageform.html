@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}<h2>Recipe Book</h2><hr>{% endblock %}
+
+
+{% block content %} 
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+<a href="{% url 'ledger:recipe_detail' pk=pk %}"><p>Back</p></a>
+
+
+{% endblock %}
