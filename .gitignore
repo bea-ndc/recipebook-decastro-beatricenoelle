@@ -9,3 +9,7 @@ recipebook/ledger/__pycache__
 recipebook-decastro-beatricenoelle\__pycache__
 recipebook/accounts/__pycache__
 recipebook/accounts/migrations/__pycache__
+media/
+media/images/*
+*.pyc
+*.pyo
